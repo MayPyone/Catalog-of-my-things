@@ -13,7 +13,7 @@ class Item
   end
 
   def can_be_archived?()
-    true if time_difference > 10
+    time_difference > 10
   end
 
   def move_to_archive()
