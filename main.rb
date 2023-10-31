@@ -1,4 +1,3 @@
-
 require_relative 'app'
 
 def select_option(option)
