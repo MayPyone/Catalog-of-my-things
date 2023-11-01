@@ -1,4 +1,3 @@
-require_relative 'item'
 class Author
   attr_reader :id
   attr_accessor :first_name, :last_name, :items
@@ -12,7 +11,5 @@ class Author
 
   def add_item(item)
     @items.push(item)
-    item.author = self
   end
 end
-
