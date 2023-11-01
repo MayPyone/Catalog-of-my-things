@@ -16,4 +16,12 @@ class App
   def add_game()
     add_games
   end
+
+  def list_authors()
+    list_all_authors
+  end
+
+  def list_games()
+    list_all_games
+  end
 end
