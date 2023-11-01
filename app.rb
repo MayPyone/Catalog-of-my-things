@@ -1,4 +1,4 @@
-require './author-game'
+require './author_game'
 class App
   def initialize
     @books = []
