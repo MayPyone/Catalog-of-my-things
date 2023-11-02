@@ -8,8 +8,7 @@ require 'json'
 class App
   include HelperMethods
 
-  attr_accessor :books, :music_albums,
-                :games, :label, :author, :file_name
+  attr_accessor :books, :music_albums, :games, :label, :author, :file_name
 
   def initialize
     @books = []
@@ -53,9 +52,7 @@ class App
     display_collection('label.json', 'No labels', ['title'])
   end
 
-
   private
-
 
   def display_music_album
     display_collection('music_album.json', 'No music albums', %w[published_date genre title on_spotify])
@@ -65,16 +62,14 @@ class App
     @games = load_from_json('game.json') || []
     puts 'Enter published date'
     published_date = gets.chomp
-    puts 'Is it a multi player game (yes or no)'
+    puts 'Is it a multi-player game (yes or no)'
     multiplayer = gets.chomp
     puts 'Enter last played date'
     last_played_at = gets.chomp
     @games << Game.new(multiplayer, last_played_at, published_date).to_hash
     save_to_json('game.json', @games)
-    puts 'game added'
+    puts 'Game added'
   end
-
-  # display game
 
   def add_game_author
     @game_author = load_from_json('add_game_author.json') || []
@@ -84,7 +79,7 @@ class App
     last_name = gets.chomp
     @game_author << { 'first_name' => first_name, 'last_name' => last_name }
     save_to_json('add_game_author.json', @game_author)
-    puts 'game author added'
+    puts 'Game author added'
   end
 
   def display_games
