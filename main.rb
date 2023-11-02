@@ -9,9 +9,10 @@ def select_option(option)
     '5' => -> { APP.list_labels },
     '6' => -> { APP.list_authors },
     '7' => -> { APP.add_book },
-    '8' => -> { APP.add_music },
-    '9' => -> { APP.add_game },
-    '10' => -> { APP.add_author }
+    '8' => -> { APP.add_label},
+    '9' => -> { APP.add_music },
+    '10' => -> { APP.add_game },
+    '11' => -> { APP.add_author }
   }
 
   if menu_options.key?(option)
@@ -31,10 +32,11 @@ def getlist
   puts '5 - List all labels'
   puts '6 - List all authors'
   puts '7 - Add a book'
-  puts '8 - Add a music album'
-  puts '9 - Add a game'
-  puts '10 - Add authors'
-  puts '11 - Exit'
+  puts '8 - Add label'
+  puts '9 - Add a music album'
+  puts '10 - Add a game'
+  puts '11 - Add authors'
+  puts '12 - Exit'
 end
 
 def start_app(message)
@@ -43,7 +45,7 @@ def start_app(message)
   loop do
     getlist
     order = gets.chomp
-    if ('1'..'11').include? order
+    if ('1'..'12').include? order
       select_option(order)
     else
       puts "\nInvalid input. please try again!"
