@@ -16,7 +16,7 @@ module MusicModule
   end
 
   def add_music()
-    puts "\nPlease enter the music album publish date"
+    puts "\nPlease enter the music album publish date [Enter date in format (yyyy-mm-dd)]"
     publish_date = gets.chomp
     puts "Enter [y/n] if the music album is on spotify"
     on_spotify = gets.chomp
