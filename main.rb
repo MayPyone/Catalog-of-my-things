@@ -1,55 +1,76 @@
 require_relative 'app'
+require_relative 'item'
+require_relative 'get_inputs'
 
-def select_option(option)
-  menu_options = {
-    '1' => -> { APP.list_books },
-    '2' => -> { APP.list_musics },
-    '3' => -> { APP.list_games },
-    '4' => -> { APP.list_genres },
-    '5' => -> { APP.list_labels },
-    '6' => -> { APP.list_authors },
-    '7' => -> { APP.add_book },
-    '8' => -> { APP.add_music },
-    '9' => -> { APP.add_game },
-    '10' => -> { APP.add_author }
-  }
+class Main
+  include HelperMethods
 
-  if menu_options.key?(option)
-    menu_options[option].call
-  else
-    puts 'Thanks for using our Application!'
-    exit
+  OPTIONS = {
+    1 => :display_books,
+    2 => :display_music_album,
+    3 => :display_genres,
+    4 => :display_games,
+    5 => :add_book,
+    6 => :add_music_album,
+    7 => :add_label,
+    8 => :add_game,
+    9 => :add_game_author,
+    10 => :display_labels,
+    11 => :display_game_authors,
+    12 => :exit
+  }.freeze
+
+  def initialize(app)
+    super()
+    @app = app
   end
-end
 
-def getlist
-  puts "\nPlease choose an options by entering a number"
-  puts "\n1 - List all books"
-  puts '2 - List all music albums'
-  puts '3 - List of games'
-  puts '4 - List all genres'
-  puts '5 - List all labels'
-  puts '6 - List all authors'
-  puts '7 - Add a book'
-  puts '8 - Add a music album'
-  puts '9 - Add a game'
-  puts '10 - Add authors'
-  puts '11 - Exit'
-end
+  def display_options
+    <<~OPTIONS
+      1 - Display all books
+      2 - Display all music albums
+      3 - Display genres
+      4 - Display all games
+      5 - Add books
+      6 - Add music album
+      7 - Add label
+      8 - Add game
+      9 - Add game author
+      10 - Display all labels
+      11 - Display game authors
+      12 - Thats all for now
+    OPTIONS
+  end
 
-def start_app(message)
-  puts message
-  order = '11'
-  loop do
-    getlist
-    order = gets.chomp
-    if ('1'..'11').include? order
-      select_option(order)
+  def handle_options(option)
+    if OPTIONS.key?(option)
+      selected_option = OPTIONS[option]
+      return exit if selected_option == :exit
+
+      @app.send(selected_option)
     else
-      puts "\nInvalid input. please try again!"
+      puts 'Invalid option'
     end
   end
 end
 
-APP = App.new
-start_app('Welcome to Catalog of my things')
+# execute_main
+class Library
+  include HelperMethods
+
+  def initialize
+    @app = App.new
+    @menu = Main.new(@app)
+  end
+
+  def run
+    puts 'Welcome to the App!'
+    loop do
+      puts @menu.display_options
+      option = gets.chomp.to_i
+      @menu.handle_options(option)
+    end
+  end
+end
+
+Library.new.run
