@@ -9,8 +9,12 @@ module MusicModule
     else
       puts "\nExisting music albums in the list:"
       @musicalbums.each_with_index do |musicalbum, i|
-        puts "\n #{i + 1}) Music Albm publish date: #{musicalbum.publish_date},"
-        puts "It is on spotify: #{musicalbum.on_spotify},"
+        puts "\n #{i + 1}) Music Albem publish date: #{musicalbum.publish_date} "
+        if musicalbum.on_spotify == true
+        puts "It is on spotify: #{musicalbum.on_spotify}"
+        else
+        puts "It is not on spotify"
+        end
        end
     end
   end
@@ -25,7 +29,7 @@ module MusicModule
     puts "\nPlease enter the genre name"
     genre_name = gets.chomp
     @genres << Genre.new(genre_name)
-    puts "\nMusic album added successfully"
+    puts "\nMusic album of genre '#{genre_name}' and publish date '#{publish_date}' has been added to the list"
     save_genres
   end
 end

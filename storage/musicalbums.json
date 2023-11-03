@@ -1,10 +1,14 @@
 [
   {
-    "publish_date": "y",
-    "on_spotify": "2023-09-08"
+    "publish_date": "2023-09-08",
+    "on_spotify": "y"
   },
   {
-    "publish_date": "2022-09-08",
+    "publish_date": "y",
+    "on_spotify": "2022-09-08"
+  },
+  {
+    "publish_date": "2023-02-23",
     "on_spotify": "y"
   }
 ]
