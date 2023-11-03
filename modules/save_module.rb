@@ -13,6 +13,8 @@ def save_file(filename, storage)
         genre: music.genre.name
       }
     end
+    save_file('musics', musics)
+  end
 
   def save_genres()
     genres = []
