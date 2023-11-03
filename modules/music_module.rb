@@ -8,7 +8,7 @@ module MusicModule
       puts "No music albums found"
     else
       puts "\nExisting music albums in the list:"
-      @musicalbums.each do |musicalbum, i|
+      @musicalbums.each_with_index do |musicalbum, i|
         puts "\n #{i + 1}) Music Albm publish date: #{musicalbum.publish_date},"
         puts "It is on spotify: #{musicalbum.on_spotify},"
        end
