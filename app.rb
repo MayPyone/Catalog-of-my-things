@@ -1,10 +1,16 @@
 require './author_game'
+require_relative 'modules/genre_module'
+require_relative 'modules/music_module'
+require_relative 'modules/save_module'
+require_relative 'modules/load_module'
+require 'json'
+
 class App
   def initialize
     @books = []
-    @musics = []
+    @musics = load_musics
     @games = []
-    @genres = []
+    @genres = load_genres
     @labels = []
     @authors = []
   end
@@ -24,4 +30,8 @@ class App
   def list_games()
     list_all_games
   end
+  include GenreModule
+  include MusicModule
+  include SaveModule
+  include LoadModule
 end
