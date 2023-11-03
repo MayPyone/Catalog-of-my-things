@@ -4,13 +4,13 @@ require 'date'
 
 module MusicModule
   def list_all_musics()
-    if @musics.empty?
+    if @musicalbums.empty?
       puts "No music albums found"
     else
       puts "\nExisting music albums in the list:"
-      @musics.each do |music, i|
-        puts "\n #{i + 1}) Music Albm publish date: #{music.publish_date},"
-        puts "It is on spotify: #{music.on_spotify},"
+      @musicalbums.each do |musicalbum, i|
+        puts "\n #{i + 1}) Music Albm publish date: #{musicalbum.publish_date},"
+        puts "It is on spotify: #{musicalbum.on_spotify},"
        end
     end
   end
@@ -20,10 +20,12 @@ module MusicModule
     publish_date = gets.chomp
     puts "Enter [y/n] if the music album is on spotify"
     on_spotify = gets.chomp
-    music = MusicAlbum.new(on_spotify, publish_date)
+    @musicalbums << MusicAlbum.new(on_spotify, publish_date)
+    save_musics
     puts "\nPlease enter the genre name"
     genre_name = gets.chomp
-    @musics << music
+    @genres << Genre.new(genre_name)
     puts "\nMusic album added successfully"
+    save_genres
   end
 end

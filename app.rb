@@ -8,7 +8,7 @@ require 'json'
 class App
   def initialize
     @books = []
-    @musics = load_musics
+    @musicalbums = load_musics
     @games = []
     @genres = load_genres
     @labels = []

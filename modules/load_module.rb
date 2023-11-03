@@ -1,28 +1,22 @@
-module LoadModule
-  def fetch_data(filename)
-    if File.exist?("./storage/#{filename}.json")
-      File.read("./storage/#{filename}.json")
-    else
-      File.write("./storage/#{filename}.json", JSON.pretty_generate([]))
-    end
+module SaveModule
+  def save_file(filename, data)
+    puts Dir.mkdir('../storage') unless Dir.exist?('data')
+    File.write("../storage/#{filename}.json", JSON.pretty_generate(data))
   end
 
-  def load_musics
-    musics = JSON.parse(fetch_data('musicalbums'))
-    loaded_musics = []
-    musics.each do |music|
-      # (publish_date, on_spotify)
-      loaded_musics << MusicAlbum.new(music['publish_date'], music['on_spotify'])
+  def save_musics
+    music_data = []
+    @musicalbums.each do |musicalbum|
+      music_data << { publish_date: musicalbum.publish_date, on_spotify: musicalbum.on_spotify }
     end
-    loaded_musics
+    save_file('musicalbums', music_data)
   end
 
-  def load_genres
-    genres = JSON.parse(fetch_data('genres'))
-    loaded_genres = []
-    genres.each do |genre|
-      loaded_genres << Genre.new(genre['name'])
+  def save_genres
+    genres_data = []
+    @genres.each do |genre|
+      genres_data << { name: genre.name }
     end
-    loaded_genres
+    save_file('genres', genres_data)
   end
 end
