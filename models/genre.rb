@@ -4,7 +4,7 @@ class Genre
   attr_reader :id
   attr_accessor :name, :items
 
-  @@genres = []
+  @genres = []
 
 def initialize(name, id)
   super()
