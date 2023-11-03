@@ -8,12 +8,16 @@ require 'json'
 class App
   def initialize
     @books = []
-    @musicalbums = load_musics
     @games = []
-    @genres = load_genres
     @labels = []
     @authors = []
+    @musicalbums = load_musics
+    @genres = load_genres
   end
+  include MusicModule
+  include GenreModule
+  include SaveModule
+  include LoadModule
 
   def add_author()
     add_authors
@@ -30,9 +34,4 @@ class App
   def list_games()
     list_all_games
   end
-
-  include GenreModule
-  include MusicModule
-  include SaveModule
-  include LoadModule
 end
