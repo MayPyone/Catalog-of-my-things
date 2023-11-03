@@ -1,7 +1,7 @@
 module SaveModule
-def save_file(filename, data)
-  puts Dir.mkdir('data') unless Dir.exists?('data')
-  File.Write("data/#{filename}.json", JSON.pretty_generate(data))
+def save_file(filename, storage)
+  puts Dir.mkdir('storage') unless Dir.exists?('storage')
+  File.Write("storage/#{filename}.json", JSON.pretty_generate(storage))
   end
 
   def save_musics()

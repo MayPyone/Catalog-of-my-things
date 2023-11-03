@@ -3,9 +3,9 @@ require_relative 'app'
 def select_option(option)
   menu_options = {
     '1' => -> { APP.list_books },
-    '2' => -> { APP.list_musics },
+    '2' => -> { APP.list_all_musics },
     '3' => -> { APP.list_games },
-    '4' => -> { APP.list_genres },
+    '4' => -> { APP.list_all_genres },
     '5' => -> { APP.list_labels },
     '6' => -> { APP.list_authors },
     '7' => -> { APP.add_book },
