@@ -6,8 +6,8 @@ class Genre
 
   @genres = []
 
-def initialize(name)
-  super()
+  def initialize(name)
+    super()
     @id = id || Random.rand(1..1000)
     @name = name
     @items = []
