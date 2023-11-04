@@ -3,7 +3,7 @@ require_relative '../models/genre'
 require 'date'
 
 module MusicModule
-  def list_all_musics()
+  def display_music_album()
     if @musicalbums.empty?
       puts "No music albums found"
     else
@@ -19,7 +19,7 @@ module MusicModule
     end
   end
 
-  def add_music()
+  def add_music_album()
     puts "\nPlease enter the music album publish date [Enter date in format (yyyy-mm-dd)]"
     publish_date = gets.chomp
     puts "Enter [y/n] if the music album is on spotify"
