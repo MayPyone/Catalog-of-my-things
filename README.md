@@ -1,74 +1,120 @@
-# ruby-capston-project
 
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Ruby-capston-project : Catalog-of-my-things
+
 <a name="readme-top"></a>
 
 # 📗 Table of Contents
 
-- [ruby-capston-project](#ruby-capston-project)
-- [📗 Table of Contents](#-table-of-contents)
-- [📖 Ruby-Capston-Project ](#-ruby-capston-project-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-    - [Getting Started ](#getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Usage](#usage)
-  - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
+- [📖 About the Project](#about-project)
+  - [🛠 Video Presentation](#video-presentation)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-# 📖 Ruby-Capston-Project <a name="about-project"></a>
+<!-- PROJECT DESCRIPTION -->
 
-**Ruby-Capston-Project** is a a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games.
+# 📖 [Catalog-of-my-things] <a name="about-project"></a>
+
+**[Catalog-of-my-things]** Is a console app that helps keep records of different types of things: **books**, **music albums**, and **games**.The data is stored in JSON files. A database with tables structure analogical to the program's class structure is prepared.
+
+## Video Presentation <a name="livelink"></a>
+- [Click here to watch the video](https://drive.google.com/file/d/1Udu_GI1YhQh4EbTPyV-LXroUUjXvxuAo/view?usp=sharing)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Server Side</summary>
+  <summary>Ruby</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">RUBY</a></li>
+<li>
+
+<a name="livelink"></a>
+  - [Click here to read more about ruby](https://www.ruby-lang.org/en/)
+
+   </li>
   </ul>
+  
 </details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **List all books.**
-- **List all music albums.**
-- **List all genres.**
-- **List all labels.**
-- **List all authors.**
-- **Add a book.**
-- **Add a music album.**
-- **Preserve data in JSON files**
-- **Database for the app**
+- **[Class functionality]**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-### Getting Started <a name="getting-started"></a>
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-- Ruby inatalled on your machine
+```sh
+ bundle install
+```
 
-  cd ruby-capston-project
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd Catalog-of-my-things
   git clone https://github.com/MayPyone/Catalog-of-my-things.git
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  cd catalog-of-my-things
+  bundle install
+  gem install --no-document rubocop -v '>= 1.0, < 2.0'
+  gem install rspec
+```
 
 ### Usage
 
-this project is a command line application that takes a morse code and turns it into words.
+To run the project, execute the following command:
 
-ruby main.rb
+```sh
+  ruby main.rb
+  or
+  ./main
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+- `rubocop --color`
+- `rspec spec --format doc`
+
+### Deployment
+
+  - Project is not deployed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,14 +138,11 @@ ruby main.rb
 - GitHub: [@ishimwepati](https://github.com/ishimwepati)
 - LinkedIn: [Ishimwe JOSEPH](https://www.linkedin.com/in/ishimwe-joseph-patient-0537b4155/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Customizable categories and fields, allowing users to add and track additional information about their items.
-- [ ] Multi-language support, allowing users to use the app in different languages.
+- [ ] **[Add different structure]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,7 +160,7 @@ Feel free to check the [issues page](https://github.com/MayPyone/Catalog-of-my-t
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project and want to support me make cooler projects Give this project a Star.
+If you like this project please show support by staring ⭐️.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,6 +168,15 @@ If you like this project and want to support me make cooler projects Give this p
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank my partners, microvers and code reviewers
+* We would like to thank Microverse for accommodating us in the Full-time Software Development program
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
