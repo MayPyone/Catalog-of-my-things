@@ -19,7 +19,6 @@ describe Label do
     let(:item) { double('item') }
 
     it 'sets the label of the added item to the array' do
-      
       subject.add_item(item)
       expect(subject.items).to include(item)
     end
