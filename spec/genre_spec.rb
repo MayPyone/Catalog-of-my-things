@@ -1,21 +1,20 @@
 require_relative '../models/genre'
 require_relative '../item'
 
-describe Genre do
-  before(:each) do
-    @genre = Genre.new('genre')
+describe 'Testing Genre classes' do
+  before(:context) do
+    @genre = Genre.new('Song')
   end
 
-  it 'takes one parameter and returns a Genre object' do
-    expect(@genre).to be_instance_of(Genre)
-  end
+  context 'Testing Genre instance and Method' do
+    it 'Testing name instance' do
+      expect(@genre.name).to eq 'Song'
+    end
 
-  it 'Genre items list should be empty' do
-    expect(@genre.items.length).to eq(0)
-  end
-
-  it 'Genre items list should have one item' do
-    @genre.add_item(Item.new('2023-01-01'))
-    expect(@genre.items.length).to eq(1)
+    it 'Testing add_items method' do
+      @item = Item.new('2023-09-08')
+      @genre.add_item(@item)
+      expect(@genre.items).to include(@item)
+    end
   end
 end
