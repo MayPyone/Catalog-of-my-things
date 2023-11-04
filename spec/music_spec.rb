@@ -12,7 +12,8 @@ class MusicModuleTest < Minitest::Test
 
   def test_display_music_album_with_non_empty_list
     @music_module.add_music_album('2023-11-04', 'y')
-    assert_equal "\nExisting music albums in the list:\n 1) Music Albem publish date: 2023-11-04 It is on spotify: true", @music_module.display_music_album
+    assert_equal "\nExisting music albums in the list:\n 1) Music Albem publish date: 2023-11-04 It is on spotify: true",
+                 @music_module.display_music_album
   end
 
   def test_add_music_album_with_valid_input
