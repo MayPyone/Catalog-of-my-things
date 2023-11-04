@@ -1,3 +1,8 @@
+require './author_game'
+require_relative 'modules/save_module'
+require_relative 'modules/load_module'
+require_relative 'modules/music_module'
+require_relative 'modules/genre_module'
 require_relative 'book'
 require_relative 'label'
 require_relative 'get_inputs'
@@ -12,12 +17,19 @@ class App
 
   def initialize
     @books = []
-    @music_albums = load_from_json('music_album.json') || []
     @games = []
     @labels = []
-    @genres = extract_genres_from_music_albums || []
+    @authors = []
+    @musicalbums = load_musics
+    @genres = load_genres
+    @games = []
+    @labels = []
     @game_author = []
   end
+  include GenreModule
+  include MusicModule
+  include SaveModule
+  include LoadModule
 
   def add_book
     @books = load_from_json('book.json') || []
@@ -52,12 +64,6 @@ class App
     display_collection('label.json', 'No labels', ['title'])
   end
 
-  private
-
-  def display_music_album
-    display_collection('music_album.json', 'No music albums', %w[published_date genre title on_spotify])
-  end
-
   def add_game
     @games = load_from_json('game.json') || []
     puts 'Enter published date'
@@ -83,7 +89,7 @@ class App
   end
 
   def display_games
-    display_collection('game.json', 'No games', %w[published_date multiplayer last_played_at])
+    display_collection('game.json', 'No games', %w[publish_date multiplayer last_played_at])
   end
 
   def display_game_authors
