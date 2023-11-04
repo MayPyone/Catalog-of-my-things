@@ -46,4 +46,8 @@ describe Book do
       expect(book.publisher).to eq(publisher)
     end
   end
+
+  it 'should false true for can_be_archieved?' do
+    expect(book.can_be_archived?).to eq(false)
+  end
 end
