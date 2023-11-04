@@ -1,4 +1,4 @@
-require_relative '../models/music'
+require_relative '../models/music_album'
 
 describe 'testing Music class' do
  before(:context) do
@@ -17,4 +17,5 @@ describe 'testing Music class' do
     it 'Testing MusicAlbum class inheritance' do
       expect(@musicalbum).to be_kind_of(Item)
     end
+end
 end
