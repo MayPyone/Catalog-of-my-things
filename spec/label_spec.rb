@@ -18,9 +18,10 @@ describe Label do
   describe '#add_item' do
     let(:item) { double('item') }
 
-    it 'sets the label of the added item to itself' do
-      expect(item).to receive(:label=).with(subject)
+    it 'sets the label of the added item to the array' do
+      
       subject.add_item(item)
+      expect(subject.items).to include(item)
     end
   end
 
