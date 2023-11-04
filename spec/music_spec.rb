@@ -3,7 +3,7 @@ require_relative '../models/music_album'
 describe 'Testing MusicAlbum class' do
   context 'Testing MusicAlbum instance and Method' do
     before(:context) do
-      @musicalbum = MusicAlbum.new('2022-09-08', true)
+      @musicalbum = MusicAlbum.new(true, '2022-09-08')
     end
 
     it 'Testing on spotify instance' do
