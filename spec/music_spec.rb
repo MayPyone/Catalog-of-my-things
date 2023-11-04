@@ -17,5 +17,9 @@ describe 'Testing MusicAlbum class' do
     it 'Testing MusicAlbum class inheritance' do
       expect(MusicAlbum).to be < Item
     end
+
+    it 'can be moved to archive' do
+      expect(@musicalbum.can_be_archived?).to eq false
+    end
   end
 end

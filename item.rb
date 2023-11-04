@@ -16,8 +16,8 @@ class Item
     time_difference > 10
   end
 
-  def move_to_archive()
-    @achieve = can_be_archived?
+  def move_to_archive
+    @archived = true if can_be_archived?
   end
 
   def genre=(genre)
