@@ -3,7 +3,7 @@ require_relative '../models/music_album'
 describe 'Testing MusicAlbum class' do
   context 'Testing MusicAlbum instance and Method' do
     before(:context) do
-      @musicalbum = MusicAlbum.new('2023-07-12', true)
+      @musicalbum = MusicAlbum.new('2022-09-08', true)
     end
 
     it 'Testing on spotify instance' do
@@ -11,7 +11,7 @@ describe 'Testing MusicAlbum class' do
     end
 
     it 'Testing publish Date instance' do
-      expect(@musicalbum.publish_date).to eq '2023-07-12'
+      expect(@musicalbum.publish_date).to eq '2022-09-08'
     end
 
     it 'Testing MusicAlbum class inheritance' do
