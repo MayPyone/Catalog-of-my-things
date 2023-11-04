@@ -13,7 +13,7 @@ class Book < Item
 
   def to_hash
     {
-      published_date: @published_date,
+      published_date: @publish_date,
       title: @title,
       author: @author,
       cover_state: @cover_state,
