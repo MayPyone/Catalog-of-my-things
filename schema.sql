@@ -42,3 +42,26 @@ CREATE TABLE
     on_spotify boolean,
     genre_id int CONSTRAINT genre_fkey FOREIGN KEY (genre_id) REFERENCES genre(id),
   );
+
+  CREATE TABLE labels ( 
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  color VARCHAR(255),
+  published_date DATE,
+  item_id INT,
+  items text[],
+  FOREIGN KEY (item_id) REFERENCES items(id)
+);
+
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    item_id INT,
+    title VARCHAR(255),
+    author_id INT,
+    label_id Int,
+    cover_state VARCHAR(255),
+    publisher VARCHAR(255),
+    FOREIGN KEY (item_id) REFERENCES items(id),
+    FOREIGN KEY (label_id) REFERENCES labels(id),
+    FOREIGN KEY (author_id) REFERENCES authors(id)
+);
