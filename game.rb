@@ -20,9 +20,7 @@ class Game < Item
 
   def to_hash
     {
-      id: @id,
       publish_date: @publish_date,
-      achieve: @achieve,
       multiplayer: @multiplayer,
       last_played_at: @last_played_at
     }
