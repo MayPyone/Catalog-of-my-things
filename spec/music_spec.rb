@@ -7,7 +7,7 @@ describe 'Testing MusicAlbum class' do
     end
 
     it 'Testing on spotify instance' do
-      expect(@musicalbum.on_spotify).to be true
+      expect(@musicalbum.on_spotify).to eq true
     end
 
     it 'Testing publish Date instance' do
