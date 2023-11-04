@@ -89,7 +89,7 @@ class App
   end
 
   def display_games
-    display_collection('game.json', 'No games', %w[published_date multiplayer last_played_at])
+    display_collection('game.json', 'No games', %w[publish_date multiplayer last_played_at])
   end
 
   def display_game_authors

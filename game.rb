@@ -17,4 +17,14 @@ class Game < Item
   def can_be_archived?
     super && last_play_difference > 2
   end
+
+  def to_hash
+    {
+      id: @id,
+      publish_date: @publish_date,
+      achieve: @achieve,
+      multiplayer: @multiplayer,
+      last_played_at: @last_played_at
+    }
+  end
 end
