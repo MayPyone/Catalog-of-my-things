@@ -26,21 +26,23 @@ describe Item do
       expect(item.can_be_archived?).to be true
     end
     it 'returns false if the item cannot be archived' do
-      item = Item.new("#{Date.today.year - 9}-01-01")
-      expect(item.can_be_archived?).to be_falsey
+      item = Item.new("#{Date.today.year - 8}-01-01")
+      expect(item.can_be_archived?).to be false
     end
   end
 
   describe '#move_to_archive' do
     it 'return true if the item can be archived' do
       item = Item.new("#{Date.today.year - 11}-01-01")
+      item = Item.new("#{Date.today.year - 11}-01-01")
       item.move_to_archive
-      expect(item.move_to_archive).to be true
+      expect(item.can_be_archived?).to be true
     end
 
     it 'return false if the item cannot be archived' do
-      item = Item.new("#{Date.today.year - 9}-01-01")
-      expect(item.move_to_archive).to be false
+      item = Item.new("#{Date.today.year}-01-01")
+      item.move_to_archive
+      expect(item.can_be_archived?).to be false
     end
   end
 
