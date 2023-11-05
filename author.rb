@@ -1,0 +1,15 @@
+class Author
+  attr_reader :id
+  attr_accessor :first_name, :last_name, :items
+
+  def initialize(first, last)
+    @id = Random.rand(1..1000)
+    @first_name = first
+    @last_name = last
+    @items = []
+  end
+
+  def add_item(item)
+    @items.push(item)
+  end
+end
